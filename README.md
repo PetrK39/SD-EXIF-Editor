@@ -22,11 +22,19 @@ Build using Visual Studio 2022
 Open the .png file through this application in a convenient way
 - Use command line
 - Drop the file on `SD EXIF Editor.exe` or on link to it
-- (Reccommened) Use FastStone ImageViewer and add `SD EXIF Editor.exe` as External Program. Then use `E` shortcut
+- (Recommened) Use FastStone ImageViewer and add `SD EXIF Editor.exe` as External Program. Then use `E` shortcut
 
-If the image contains the 'parameters' tag, its content will be displayed in the text box
-It can be modified or deleted/copied using the corresponding hotkeys
-The 'used embeddings' part will be ignored because the WebUI cannot handle parsing
+# Screenshot
+
+![Screenshot](screenshot.png)
+
+# Features
+
+- If the image contains the 'parameters' tag, its content will be displayed in the text box
+- Global hotkeys for copying, deleting, saving and closing the app
+- The 'used embeddings' part will be ignored on copying because the WebUI cannot handle parsing
+- Image tooltip on hover
+- File path tooltip on hover
 
 # Note
 
