@@ -39,4 +39,5 @@ Open the .png file through this application in a convenient way
 # Note
 
 NovelAI metadata not yet supported
+
 Metadata tag name can be changed on build
