@@ -7,7 +7,7 @@ Tiny tool for viewing and editing image metadata associated with [AUTOMATIC1111/
 ## Dependencies
 
 - Windows 7+
-- .NET 6.0
+- .NET 6.0 Desktop Runtime
 
 ## Release
 
