@@ -1,0 +1,77 @@
+﻿<Window x:Class="SD_EXIF_Editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SD_EXIF_Editor"
+        xmlns:vm="clr-namespace:SD_EXIF_Editor.ViewModel"
+        xmlns:utils="clr-namespace:SD_EXIF_Editor.Utils"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type={x:Type vm:MainViewModel}}"
+        Title="SD EXIF Editor"
+        Height="200"
+        Width="800"
+        SizeToContent="Height">
+    <Window.Resources>
+        <utils:CommandToTextConverter x:Key="CommandToTextConverter" />
+    </Window.Resources>
+    <DockPanel LastChildFill="True">
+        <UniformGrid DockPanel.Dock="Bottom"
+                     Rows="1">
+            <Button Command="Copy"
+                    Content="{Binding RelativeSource={RelativeSource Self}, Path=Command, Converter={StaticResource CommandToTextConverter}}"/>
+            <Button Command="Delete"
+                    Content="{Binding RelativeSource={RelativeSource Self}, Path=Command, Converter={StaticResource CommandToTextConverter}}"
+                    BorderBrush="Red"/>
+            <Button Command="Save"
+                    Content="{Binding RelativeSource={RelativeSource Self}, Path=Command, Converter={StaticResource CommandToTextConverter}}" />
+            <Button Command="Close"
+                    Content="{Binding RelativeSource={RelativeSource Self}, Path=Command, Converter={StaticResource CommandToTextConverter}}" />
+            <UniformGrid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin"
+                            Value="12" />
+                    <Setter Property="Padding"
+                            Value="6" />
+                </Style>
+            </UniformGrid.Resources>
+        </UniformGrid>
+        <Grid Grid.IsSharedSizeScope="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="{Binding BitmapImage}"
+                   UseLayoutRounding="True"
+                   RenderOptions.BitmapScalingMode="HighQuality"
+                   Grid.Column="0"
+                   Grid.RowSpan="2">
+                <Image.ToolTip>
+                    <ToolTip Background="Transparent"
+                             BorderBrush="Transparent">
+                        <Image Source="{Binding BitmapImage}" />
+                    </ToolTip>
+                </Image.ToolTip>
+            </Image>
+
+            <TextBlock Text="{Binding FilePath, StringFormat='WebUI Metadata for file: {0}'}"
+                       TextWrapping="NoWrap"
+                       TextTrimming="CharacterEllipsis"
+                       ToolTip="{Binding FilePath}"
+                       Margin="10"
+                       Grid.Column="1" />
+            <TextBox Text="{Binding InputMetadata, UpdateSourceTrigger=PropertyChanged}"
+                     TextWrapping="WrapWithOverflow"
+                     AcceptsReturn="True"
+                     Name="TextBox"
+                     Margin="6"
+                     Grid.Column="1"
+                     Grid.Row="1" />
+        </Grid>
+    </DockPanel>
+</Window>
