@@ -20,13 +20,13 @@ namespace SD_EXIF_Editor
             CommandBindings.Add(new CommandBinding(ApplicationCommands.Copy, mvm.CopyCommandExecuted));
             CommandBindings.Add(new CommandBinding(ApplicationCommands.Delete, mvm.DeleteCommandExecuted));
 
-            TextBox.TextChanged += TextBox_GotFocus;
+            TextBox.TextChanged += TextBox_TextChanged;
             TextBox.Focus();
         }
 
-        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        private void TextBox_TextChanged(object sender, RoutedEventArgs e)
         {
-            TextBox.GotFocus -= TextBox_GotFocus;
+            TextBox.TextChanged -= TextBox_TextChanged;
             TextBox.CaretIndex = TextBox.Text.Length;
         }
 
