@@ -1,6 +1,6 @@
 # SD EXIF Editor
 
-Tiny tool for viewing and editing image metadata associated with Automatic1111's WebUI StableDiffusion generation parameters
+Tiny tool for viewing and editing image metadata associated with [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) generation parameters
 
 # Getting Started
 
