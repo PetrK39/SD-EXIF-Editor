@@ -1,3 +1,8 @@
+I'm excited to announce new version of SD EXIF Editor!  
+Greatly improved visuals and functionality waiting for your hands to get on it  
+[Check out SD EXIF Editor v2 now!](https://github.com/PetrK39/SD-EXIF-Editor-v2)  
+And of course thank you for using my apps
+
 # SD EXIF Editor
 
 Tiny tool for viewing and editing image metadata associated with [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) generation parameters
